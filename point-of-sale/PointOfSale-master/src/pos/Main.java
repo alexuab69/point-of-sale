@@ -44,7 +44,6 @@ public class Main {
     newSale1.saleLineItems.add(new SaleLineItem(moritz, 4)); // public attribute
     newSale1.saleLineItems.add(new SaleLineItem(cocacola, 3));
   }
-  mamawebo
   */
 
 }
