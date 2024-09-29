@@ -8,7 +8,7 @@ public class PaymentInCash {
   }
 
   public BagOfCash change(double totalSale) {
-    ComputePaymentInCashGreedy compute;
+    ComputePaymentInCash compute = new ComputePaymentInCashGreedy();
     BagOfCash change = compute.ComputePayment(amount,totalSale);
     return change;
   }
