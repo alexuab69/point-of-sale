@@ -8,6 +8,9 @@ public class PointOfSale {
   private ArrayList<Sale> sales;
   private int idLastSale = 0;
   private final String FILE_NAME = "src/pos/catalog.txt";
+  private final String FILE_NAME_2 = "src/pos/cashBox.txt";
+  private BagOfCash cashBox(FILE_NAME_2);
+
 
   public PointOfSale() {
     productCatalog = new ProductCatalog(FILE_NAME);
@@ -44,6 +47,11 @@ public class PointOfSale {
   public void payOneSale(int saleId, double amount) {
     Sale sale = searchSaleById(saleId);
     sale.pay(amount);
+  }
+
+  public void payOneSaleCash(int saleId, BagOfCash amount) {
+    Sale sale = searchSaleById(int Id);
+    sale.
   }
 
   public void printChangeOfSale(int saleId) {
