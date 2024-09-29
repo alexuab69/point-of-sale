@@ -8,13 +8,23 @@ public class PointOfSale {
   private ArrayList<Sale> sales;
   private int idLastSale = 0;
   private final String FILE_NAME = "src/pos/catalog.txt";
-  private final String FILE_NAME_2 = "src/pos/cashBox.txt";
-  private BagOfCash cashBox(FILE_NAME_2);
-
+  private BagOfCash cashBox;
 
   public PointOfSale() {
     productCatalog = new ProductCatalog(FILE_NAME);
     sales = new ArrayList<>();
+    cashBox.addCash(50.0,10000);
+    cashBox.addCash(20.0,10000);
+    cashBox.addCash(10.0,10000);
+    cashBox.addCash(5.0,10000);
+    cashBox.addCash(2.0,10000);
+    cashBox.addCash(1.0,10000);
+    cashBox.addCash(0.5,10000);
+    cashBox.addCash(0.2,10000);
+    cashBox.addCash(0.1,10000);
+    cashBox.addCash(0.05,10000);
+    cashBox.addCash(0.02,10000);
+    cashBox.addCash(0.01,10000);
   }
 
   public int makeNewSale() {

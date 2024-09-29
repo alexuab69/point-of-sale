@@ -1,4 +1,6 @@
 package pos;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,6 +10,7 @@ public class BagOfCash {
         cashCombination = new HashMap<>();
         initializeBagOfCash();
     }
+
     private void initializeBagOfCash(){
         cashCombination.put(50.0,0);
         cashCombination.put(20.0,0);
