@@ -43,11 +43,11 @@ public class BagOfCash {
     public void displayBag() {
         System.out.println("Contents of the Bag of Cash:");
         for (Map.Entry<Double, Integer> entry : cashCombination.entrySet()) {
-            System.out.printf("Denomination: %.2f, Quantity: %d%n", entry.getKey(), entry.getValue());
+            System.out.printf("Denomination: %.2f, Quantity: %d\n", entry.getKey(), entry.getValue());
         }
     }
-    public int getDenomination(double denomination){
+    public int getQuantity(double denomination){
         assert cashCombination.containsKey(denomination):"Invalid denomination";
         return cashCombination.get(denomination);
-    }//hola
+    }
 }

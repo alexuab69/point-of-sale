@@ -10,7 +10,8 @@ public class Sale {
   private int id;
   private ArrayList<SaleLineItem> saleLineItems = new ArrayList<>();
   private LocalDateTime dateTime = LocalDateTime.now();
-  private PaymentInCash payment;
+  private PaymentInCash payment_cash;
+  private PaymentByCreditCard payment_credit;
 
   public Sale(int id) {
     this.id = id;
@@ -62,15 +63,25 @@ public class Sale {
     System.out.printf("Total %.2f\n", total);
   }
 
-  public void pay(double amount) {
+  //credit card
+  public void payCreditCard(double amount) {
     assert !isPaid : "sale " + id + " has already been paid";
-    payment = new PaymentInCash(amount);
+    payment_credit = new PaymentByCreditCard(amount);
+    isPaid = true;
+  }
+
+  public void payCash(BagOfCash amount) {
+    assert !isPaid : "sale " + id + " has already been paid";
+    payment_cash = new PaymentInCash(amount);
     isPaid = true;
   }
 
   public void printChange() {
-    assert payment != null : "No payment for sale " + id;
-    System.out.printf("\nAmount paid : %.2f\nChange : %.2f\n", payment.getAmount(), payment.change(total()));
+    assert payment_cash != null : "No payment for sale " + id;
+    System.out.print("\nAmount paid : ");
+    payment_cash.getAmount().displayBag();
+    System.out.print("\nChange : ");
+    payment_cash.change(total()).displayBag();
   }
 
   public boolean isPaid() {

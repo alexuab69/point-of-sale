@@ -1,19 +1,19 @@
 package pos;
 
 public class PaymentInCash {
-  double amount; // Euros
+  BagOfCash amount; // Euros
 
-  public PaymentInCash(double amount) {
+  public PaymentInCash(BagOfCash amount) {
     this.amount = amount;
   }
 
-  public double change(double totalSale) {
-    double change = amount - totalSale; // better than sale.total(), avoids a dependence
-    assert change >= 0;
+  public BagOfCash change(double totalSale) {
+    ComputePaymentInCashGreedy compute;
+    BagOfCash change = compute.ComputePayment(amount,totalSale);
     return change;
   }
 
-  public double getAmount() {
+  public BagOfCash getAmount() {
     return amount;
   }
 }
